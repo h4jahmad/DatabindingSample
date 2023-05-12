@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "DataBindingsample"
-include ':app'
+include(":app")
