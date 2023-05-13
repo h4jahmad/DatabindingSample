@@ -17,14 +17,13 @@ class UserLocalDataSourceImpl : UserDataSource {
         ),
     )
 
-    override fun getUser(email: String): User? = users.find { it.email == email }
-    override fun getUser(user: User): User? = users.find { it == user }
+    override fun getUserByEmail(email: String): User? = users.find { it.email == email }
 
     override fun authenticateUser(email: String, password: String): Boolean =
         users.find { it.email == email && it.password == password } != null
 
-    override fun register(user: User): Boolean {
-        if (getUser(user) == null) {
+    override fun registerNewUser(user: User): Boolean {
+        if (getUserByEmail(user.email) == null) {
             users.add(user)
             return true
         }

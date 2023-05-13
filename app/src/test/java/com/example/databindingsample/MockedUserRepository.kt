@@ -14,6 +14,13 @@ class MockedUserRepository : UserRepository {
         return ActionResult.Success(Unit)
     }
 
+    override fun registerNewUser(newUser: User): ActionResult<Unit> {
+        return if (users.find { it.email == newUser.email } != null)
+            ActionResult.Error(Exception("There's already an account with a same email."))
+        else
+            ActionResult.Success(Unit)
+    }
+
     companion object {
         val users = mutableListOf(
             User(

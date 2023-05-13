@@ -9,7 +9,7 @@ import javax.inject.Inject
 class LoginUseCaseImpl @Inject constructor(
     private val repository: UserRepository,
 ) : LoginUseCase {
-    override fun login(email: String, password: String): LoginUiState {
+    override operator fun invoke(email: String, password: String): LoginUiState {
         if (StringUtil.isEmailInvalid(email))
             return LoginUiState.InvalidEmail
         if (StringUtil.isPasswordInvalid(password))
@@ -17,7 +17,7 @@ class LoginUseCaseImpl @Inject constructor(
 
         return when(repository.isUserValid(email, password)){
             is ActionResult.Success -> {
-                LoginUiState.SuccessLogin
+                LoginUiState.LoginSuccess
             }
             is ActionResult.Error -> {
                 LoginUiState.WrongCreds
