@@ -11,7 +11,7 @@ import dagger.hilt.android.components.ViewModelComponent
 
 @Module
 @InstallIn(ViewModelComponent::class)
-interface DataModule {
+interface AuthModule {
 
     @Binds
     fun bindUserRepository(impl: UserRepositoryImpl): UserRepository

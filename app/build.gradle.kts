@@ -5,6 +5,7 @@ plugins {
     kotlin("android")
     kotlin("kapt")
     alias(libs.plugins.google.hilt)
+    alias(libs.plugins.androidx.navigation.safeargs)
 }
 
 android {
@@ -14,6 +15,7 @@ android {
     defaultConfig {
         applicationId = "com.example.databindingsample"
         minSdk = libs.versions.minSdk.get().toInt()
+        targetSdk = libs.versions.compileSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
 
