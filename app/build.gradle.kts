@@ -1,3 +1,5 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     alias(libs.plugins.android.application)
     kotlin("android")
@@ -19,6 +21,11 @@ android {
     }
 
     buildTypes {
+        val apiKey: String = gradleLocalProperties(rootDir).getProperty("PIXABAY_API_KEY")
+        buildTypes.configureEach {
+            buildConfigField("String", "PIXABAY_API_KEY", apiKey)
+            buildConfigField("String", "PIXABAY_BASE_URL", "\"https://pixabay.com/api/\"")
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -35,6 +42,7 @@ android {
         jvmTarget = JavaVersion.VERSION_17.toString()
     }
     buildFeatures {
+        buildConfig = true
         dataBinding = true
     }
 }
@@ -54,6 +62,7 @@ dependencies {
     implementation(libs.squareup.gson)
 
     testImplementation(libs.junit)
+    testImplementation(libs.google.truth)
     androidTestImplementation(libs.androidx.test.junit)
     androidTestImplementation(libs.androidx.test.espresso)
 }
