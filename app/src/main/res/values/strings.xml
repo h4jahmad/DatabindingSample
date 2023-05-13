@@ -9,10 +9,16 @@
 
 	<string name="login_email_input_hint">Please enter your email.</string>
 	<string name="login_password_input_hint">Please enter your password.</string>
+	<string name="login_age_input_hint">Please enter your age.</string>
 	<string name="login_page_title">Please Enter to your account.</string>
 	<string name="login_title">Login</string>
 	<string name="navigate_to_register_page_action">Create A New Account</string>
 	<string name="invalid_email_error">Email is invalid.</string>
 	<string name="invalid_password_error">Password is invalid.</string>
 	<string name="wrong_creds_error">Please check your info. Email or password is wrong.</string>
+	<string name="content_description_return">Return</string>
+	<string name="register_title">Register</string>
+	<string name="invalid_age_error">Sorry. You must be between 18 to 99 :(</string>
+	<string name="user_found_error">Email has been found. If already registered, please login.</string>
+	<string name="register_page_title">Let\'s create a new account!</string>
 </resources>

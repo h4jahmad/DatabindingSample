@@ -1,6 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+	<data>
+
+		<variable
+			name="vm"
+			type="com.example.databindingsample.auth.ui.RegisterViewModel" />
+
+	</data>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<TextView
+			android:id="@+id/register_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/space_horizontal"
+			android:layout_marginTop="@dimen/dimen_sixteen"
+			android:text="@string/register_page_title"
+			android:textSize="@dimen/text_size_title"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<com.google.android.material.textfield.TextInputLayout
+			android:id="@+id/register_email_input_container"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginHorizontal="@dimen/dimen_thirty_two"
+			android:layout_marginTop="@dimen/dimen_thirty_two"
+			app:errorText="@{vm.emailErrorResId}"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/register_title">
+
+			<com.google.android.material.textfield.TextInputEditText
+				android:id="@+id/register_email_input"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:hint="@string/login_email_input_hint"
+				android:inputType="textEmailAddress"
+				android:text="@={vm.email}" />
+		</com.google.android.material.textfield.TextInputLayout>
+
+		<com.google.android.material.textfield.TextInputLayout
+			android:id="@+id/register_password_input_container"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginHorizontal="@dimen/dimen_thirty_two"
+			android:layout_marginTop="@dimen/space_vertical"
+			app:errorText="@{vm.passwordErrorResId}"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/register_email_input_container">
+
+			<com.google.android.material.textfield.TextInputEditText
+				android:id="@+id/register_password_input"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:hint="@string/login_password_input_hint"
+				android:inputType="textPassword"
+				android:text="@={vm.password}" />
+		</com.google.android.material.textfield.TextInputLayout>
+
+		<com.google.android.material.textfield.TextInputLayout
+			android:id="@+id/register_age_input_container"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_marginHorizontal="@dimen/dimen_thirty_two"
+			android:layout_marginTop="@dimen/space_vertical"
+			app:errorText="@{vm.ageErrorResId}"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/register_password_input_container">
+
+			<com.google.android.material.textfield.TextInputEditText
+				android:id="@+id/register_age_input"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:hint="@string/login_age_input_hint"
+				android:inputType="numberDecimal"
+				android:text="@={vm.age}" />
+		</com.google.android.material.textfield.TextInputLayout>
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/register_action"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="@dimen/space_vertical"
+			android:onClick="@{() -> vm.register()}"
+			android:text="@string/register_title"
+			app:layout_constraintEnd_toEndOf="@+id/register_age_input_container"
+			app:layout_constraintTop_toBottomOf="@+id/register_age_input_container" />
+
+		<com.google.android.material.floatingactionbutton.FloatingActionButton
+			android:id="@+id/register_navigate_up"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/dimen_twenty_four"
+			android:layout_marginBottom="@dimen/dimen_thirty_two"
+			android:contentDescription="@string/content_description_return"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:srcCompat="@drawable/ic_arrow_back" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

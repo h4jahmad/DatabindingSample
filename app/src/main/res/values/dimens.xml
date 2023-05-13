@@ -5,4 +5,5 @@
 	<dimen name="text_size_title">24sp</dimen>
 	<dimen name="space_horizontal">@dimen/dimen_sixteen</dimen>
 	<dimen name="dimen_sixteen">16dp</dimen>
+	<dimen name="dimen_twenty_four">24dp</dimen>
 </resources>

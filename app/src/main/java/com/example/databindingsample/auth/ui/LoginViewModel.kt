@@ -23,6 +23,7 @@ class LoginViewModel @Inject constructor(
 
     val email = MutableLiveData("")
     val password = MutableLiveData("")
+
     val emailErrorResId = MutableLiveData(-1)
     val passwordErrorResId = MutableLiveData(-1)
 
@@ -30,13 +31,13 @@ class LoginViewModel @Inject constructor(
         when (loginUseCase(email.safeValue, password.safeValue)) {
             LoginResult.InvalidEmail -> emailErrorResId.postValue(R.string.invalid_email_error)
             LoginResult.InvalidPassword -> passwordErrorResId.postValue(R.string.invalid_password_error)
-            LoginResult.LoginSuccess -> _uiState.update { it.copy(isUserLoggedIn = true) }
             LoginResult.WrongCreds -> _uiState.update {
                 it.copy(
                     errorMessage = R.string.wrong_creds_error,
                     shouldShowSnackbar = true
                 )
             }
+            LoginResult.LoginSuccess -> _uiState.update { it.copy(isUserLoggedIn = true) }
         }
     }
 

@@ -1,7 +1,6 @@
 package com.example.databindingsample.auth.usecase
 
 import com.example.databindingsample.auth.repository.UserRepository
-import com.example.databindingsample.auth.ui.RegisterUiState
 import com.example.databindingsample.common.ActionResult
 import com.example.databindingsample.common.util.StringUtil
 import com.example.databindingsample.entities.User
@@ -11,17 +10,17 @@ class RegisterUseCaseImpl @Inject constructor(
     private val repository: UserRepository,
 ) : RegisterUseCase {
 
-    override fun invoke(newUser: User): RegisterUiState {
+    override fun invoke(newUser: User): RegisterResult {
         if (StringUtil.isEmailInvalid(newUser.email))
-            return RegisterUiState.InvalidEmail
+            return RegisterResult.InvalidEmail
         if (StringUtil.isPasswordInvalid(newUser.password))
-            return RegisterUiState.InvalidPassword
+            return RegisterResult.InvalidPassword
         if (isAgeInvalid(newUser.age))
-            return RegisterUiState.InvalidAge
+            return RegisterResult.InvalidAge
 
         return when (repository.registerNewUser(newUser)) {
-            is ActionResult.Success -> RegisterUiState.RegisterSuccess
-            is ActionResult.Error -> RegisterUiState.UserFound
+            is ActionResult.Success -> RegisterResult.RegisterSuccess
+            is ActionResult.Error -> RegisterResult.UserFound
         }
     }
 

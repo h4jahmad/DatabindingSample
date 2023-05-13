@@ -1,9 +1,7 @@
 package com.example.databindingsample.auth.ui
 
-sealed interface RegisterUiState {
-    object RegisterSuccess : RegisterUiState
-    object InvalidEmail : RegisterUiState
-    object InvalidPassword : RegisterUiState
-    object InvalidAge : RegisterUiState
-    object UserFound: RegisterUiState
-}
+data class RegisterUiState(
+    val errorMessage: Int? = null,
+    val shouldShowSnackbar: Boolean = false,
+    val isUserLoggedIn: Boolean = false,
+)
