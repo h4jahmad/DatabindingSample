@@ -5,6 +5,7 @@ import android.widget.ImageView
 import androidx.annotation.StringRes
 import androidx.databinding.BindingAdapter
 import coil.load
+import coil.transform.CircleCropTransformation
 import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
@@ -20,6 +21,13 @@ fun TextInputLayout.setErrorMessage(@StringRes messageResId: Int) {
 fun ImageView.loadUrl(url: String) {
     load(url) {
         crossfade(true)
+    }
+}
+@BindingAdapter("circularLoadUrl")
+fun ImageView.circularLoadUrl(url: String) {
+    load(url) {
+        crossfade(true)
+        transformations(CircleCropTransformation())
     }
 }
 

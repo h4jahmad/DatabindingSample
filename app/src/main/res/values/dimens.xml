@@ -10,4 +10,6 @@
 	<dimen name="text_size_list_item_title">16sp</dimen>
 	<dimen name="size_user_thumbnail">60dp</dimen>
 	<dimen name="margin_end_item_user_thumbnail">50dp</dimen>
+	<dimen name="space_horizontal_list_item">24dp</dimen>
+	<dimen name="margin_end_item_image_creator_label">8dp</dimen>
 </resources>

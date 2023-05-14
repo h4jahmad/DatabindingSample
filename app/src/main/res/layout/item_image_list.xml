@@ -14,6 +14,7 @@
 	<androidx.constraintlayout.widget.ConstraintLayout
 		android:layout_width="match_parent"
 		android:layout_height="@dimen/height_item_image_list"
+		android:paddingHorizontal="@dimen/space_horizontal_list_item"
 		android:background="?attr/selectableItemBackground"
 		android:clickable="true"
 		android:focusable="true">
@@ -30,7 +31,7 @@
 
 		<ImageView
 			android:id="@+id/item_image_list_user_thumbnail"
-			loadUrl="@{item.userImageUrl}"
+			circularLoadUrl="@{item.userImageUrl}"
 			android:layout_width="@dimen/size_user_thumbnail"
 			android:layout_height="@dimen/size_user_thumbnail"
 			android:layout_marginTop="@dimen/space_vertical"
@@ -43,25 +44,27 @@
 			android:id="@+id/item_image_list_creator_label"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_marginStart="@dimen/space_horizontal"
-			android:layout_marginTop="@dimen/dimen_thirty_two"
-			android:layout_marginEnd="@dimen/space_horizontal"
+			android:layout_marginStart="@dimen/margin_end_item_image_creator_label"
 			android:text="@string/creator_label"
 			android:textColor="@color/colorOutline"
 			android:textSize="@dimen/text_size_list_item_title"
-			app:layout_constraintBaseline_toBaselineOf="@+id/item_image_list_creator_name"
-			app:layout_constraintEnd_toStartOf="@+id/item_image_list_creator_name" />
+			app:layout_constraintStart_toEndOf="@+id/item_image_list_thumbnail"
+			app:layout_constraintTop_toTopOf="@+id/item_image_list_creator_name" />
 
 		<TextView
 			android:id="@+id/item_image_list_creator_name"
-			android:layout_width="wrap_content"
+			android:layout_width="0dp"
 			android:layout_height="wrap_content"
-			android:layout_marginStart="@dimen/space_horizontal"
+			android:gravity="center_horizontal"
+			android:layout_marginHorizontal="@dimen/space_horizontal"
 			android:layout_marginTop="@dimen/space_vertical"
 			android:text="@{item.userName}"
 			android:textSize="@dimen/text_size_list_item_title"
-			app:layout_constraintEnd_toEndOf="@+id/item_image_list_user_thumbnail"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toEndOf="@+id/item_image_list_creator_label"
 			app:layout_constraintTop_toBottomOf="@+id/item_image_list_user_thumbnail"
+			app:layout_constraintVertical_bias="0.0"
 			tools:text="Some Name" />
 
 	</androidx.constraintlayout.widget.ConstraintLayout>
