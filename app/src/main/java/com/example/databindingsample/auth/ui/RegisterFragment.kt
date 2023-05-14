@@ -61,9 +61,7 @@ class RegisterFragment : Fragment() {
 
         collectWithLifecycle(viewModel.uiState) { state ->
             if (state.isUserLoggedIn) {
-                binding.root.showSnackbar(R.string.app_name) {
-                    viewModel.setErrorDismissed()
-                }
+                navController.navigate(RegisterFragmentDirections.actionRegisterFragmentToHomeFragment())
             }
             if (state.errorMessage != null) {
                 binding.root.showSnackbar(state.errorMessage) {
@@ -71,6 +69,11 @@ class RegisterFragment : Fragment() {
                 }
             }
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

@@ -6,13 +6,13 @@ class UserLocalDataSourceImpl : UserDataSource {
 
     private val users = mutableListOf(
         User(
-            email = "shon@360mea.com",
-            password = "thisisyourpasswordshon",
+            email = "first@domain.com",
+            password = "pswordfirst",
             age = 25
         ),
         User(
-            email = "tiago.alves@360mea.com",
-            password = "thisisyourpasswordtiago",
+            email = "second@domain.com",
+            password = "pswordsecond",
             age = 25
         ),
     )

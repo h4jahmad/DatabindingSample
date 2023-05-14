@@ -7,7 +7,7 @@ import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
 
-@BindingAdapter("app:errorText")
+@BindingAdapter("errorText")
 fun TextInputLayout.setErrorMessage(@StringRes messageResId: Int) {
     error = if (messageResId == -1) "" else context.getString(messageResId)
 }

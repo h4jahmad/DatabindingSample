@@ -47,9 +47,7 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         collectWithLifecycle(viewModel.uiState) { state ->
             if (state.isUserLoggedIn) {
-                binding.root.showSnackbar(R.string.app_name) {
-                    viewModel.setErrorDismissed()
-                }
+                navController.navigate(LoginFragmentDirections.actionLoginFragmentToHomeFragment())
             }
             if (state.errorMessage != null) {
                 binding.root.showSnackbar(state.errorMessage) {

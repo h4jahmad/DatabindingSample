@@ -32,7 +32,7 @@
 			android:layout_height="wrap_content"
 			android:layout_marginHorizontal="@dimen/dimen_thirty_two"
 			android:layout_marginTop="@dimen/dimen_thirty_two"
-			app:errorText="@{vm.emailErrorResId}"
+			errorText="@{vm.emailErrorResId}"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toBottomOf="@+id/login_title">
@@ -52,7 +52,7 @@
 			android:layout_height="wrap_content"
 			android:layout_marginHorizontal="@dimen/dimen_thirty_two"
 			android:layout_marginTop="@dimen/space_vertical"
-			app:errorText="@{vm.passwordErrorResId}"
+			errorText="@{vm.passwordErrorResId}"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toBottomOf="@+id/login_email_input_container">
