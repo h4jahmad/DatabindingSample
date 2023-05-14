@@ -39,7 +39,7 @@ class LoginFragment : Fragment() {
         container,
         false
     ).apply {
-        this.lifecycleOwner = this@LoginFragment
+        this.lifecycleOwner = viewLifecycleOwner
         this.vm = viewModel
         _binding = this
     }.root
@@ -69,6 +69,7 @@ class LoginFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+
         _binding = null
     }
 

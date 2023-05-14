@@ -39,7 +39,7 @@ class RegisterFragment : Fragment() {
         container,
         false
     ).apply {
-        this.lifecycleOwner = this@RegisterFragment
+        this.lifecycleOwner = viewLifecycleOwner
         this.vm = viewModel
         _binding = this
     }.root

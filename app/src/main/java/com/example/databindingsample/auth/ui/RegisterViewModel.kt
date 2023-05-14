@@ -9,7 +9,7 @@ import com.example.databindingsample.common.util.safeValue
 import com.example.databindingsample.entities.User
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import javax.inject.Inject
 
@@ -19,8 +19,7 @@ class RegisterViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(RegisterUiState())
-    val uiState: StateFlow<RegisterUiState>
-        get() = _uiState
+    val uiState = _uiState.asStateFlow()
 
     val email = MutableLiveData("")
     val password = MutableLiveData("")
