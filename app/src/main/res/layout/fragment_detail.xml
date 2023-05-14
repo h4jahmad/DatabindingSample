@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+
+	<data>
+
+		<variable
+			name="vm"
+			type="com.example.databindingsample.detail.DetailViewModel" />
+	</data>
+
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<ScrollView
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content">
+
+				<TextView
+					android:id="@+id/textView"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="328dp"
+					android:text="TextView"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toTopOf="parent" />
+			</androidx.constraintlayout.widget.ConstraintLayout>
+
+		</ScrollView>
+
+		<com.google.android.material.floatingactionbutton.FloatingActionButton
+			android:id="@+id/detail_return_action"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="start|bottom"
+			android:layout_marginStart="@dimen/dimen_twenty_four"
+			android:layout_marginBottom="@dimen/dimen_thirty_two"
+			android:contentDescription="@string/content_description_detail_return_action"
+			app:srcCompat="@drawable/ic_arrow_back"/>
+	</FrameLayout>
+</layout>

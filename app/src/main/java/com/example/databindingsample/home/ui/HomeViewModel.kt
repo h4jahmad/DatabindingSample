@@ -57,7 +57,8 @@ class HomeViewModel @Inject constructor(
             it.copy(
                 shouldShowSnackbar = false,
                 shouldShowImageList = false,
-                shouldShowProgress = true
+                imageList = emptyList(),
+                shouldShowProgress = true,
             )
         }
     }
@@ -69,6 +70,8 @@ class HomeViewModel @Inject constructor(
                 errorMessageResId = null,
                 shouldShowSnackbar = true,
                 shouldShowProgress = false,
+                shouldShowImageList = false,
+                imageList = emptyList(),
             )
         }
     }
@@ -80,6 +83,8 @@ class HomeViewModel @Inject constructor(
                 errorMessage = null,
                 shouldShowSnackbar = true,
                 shouldShowProgress = false,
+                shouldShowImageList = false,
+                imageList = emptyList(),
             )
         }
     }

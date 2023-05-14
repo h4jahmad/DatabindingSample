@@ -1,5 +1,9 @@
 package com.example.databindingsample.home.ui.models
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class ImageListItem(
     val id: Int,
     val thumbnailUrl: String,
@@ -14,4 +18,4 @@ data class ImageListItem(
     val downloadsCount: Int,
     val userName: String,
     val userImageUrl: String
-)
+) : Parcelable

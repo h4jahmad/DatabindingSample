@@ -9,6 +9,8 @@ import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavOptions
+import androidx.navigation.Navigator
 import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -49,7 +51,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val listAdapter = ImageListAdapter {
-            Toast.makeText(context, it.userName, Toast.LENGTH_SHORT).show()
+            navController.navigate(HomeFragmentDirections.actionHomeFragmentToDetailFragment(it))
         }
         binding.homeImageList.apply {
             adapter = listAdapter

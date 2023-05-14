@@ -16,11 +16,12 @@
 	<string name="invalid_email_error">Email is invalid.</string>
 	<string name="invalid_password_error">Password is invalid.</string>
 	<string name="wrong_creds_error">Please check your info. Email or password is wrong.</string>
-	<string name="content_description_return">Return</string>
+	<string name="content_description_register_return_action">Return to login page.</string>
 	<string name="register_title">Register</string>
 	<string name="invalid_age_error">Sorry. You must be between 18 to 99 :(</string>
 	<string name="user_found_error">Email has been found. If already registered, please login.</string>
 	<string name="register_page_title">Let\'s create a new account!</string>
 	<string name="creator_label">Creator:</string>
 	<string name="network_connection_error">Network connection error. Please check your internet connection.</string>
+	<string name="content_description_detail_return_action">Return to home page.</string>
 </resources>

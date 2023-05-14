@@ -101,7 +101,7 @@
 			android:layout_height="wrap_content"
 			android:layout_marginStart="@dimen/dimen_twenty_four"
 			android:layout_marginBottom="@dimen/dimen_thirty_two"
-			android:contentDescription="@string/content_description_return"
+			android:contentDescription="@string/content_description_register_return_action"
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
 			app:srcCompat="@drawable/ic_arrow_back" />
