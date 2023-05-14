@@ -8,7 +8,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.navArgs
 import com.example.databindingsample.R
+import com.example.databindingsample.common.util.pxToDp
+import com.example.databindingsample.common.util.safeValue
 import com.example.databindingsample.databinding.FragmentDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -24,6 +27,8 @@ class DetailFragment : Fragment() {
     private val navController by lazy {
         NavHostFragment.findNavController(this)
     }
+
+    private val args: DetailFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,6 +49,11 @@ class DetailFragment : Fragment() {
         binding.detailReturnAction.setOnClickListener {
             navController.navigateUp()
         }
+        requireNotNull(args.image.largeImageURL)
+        viewModel.setImageInfo(args.image)
+        viewModel.setImageHeight(resources.pxToDp(args.image.imageHeight))
+
+        binding.detailImage.minimumHeight = viewModel.imageHeight.safeValue
     }
 
     override fun onDestroy() {

@@ -8,6 +8,7 @@ object GetImagesMapper {
         ImageListItem(
             id,
             previewURL,
+            largeImageURL,
             imageWidth,
             imageHeight,
             type,

@@ -7,6 +7,7 @@ import kotlinx.parcelize.Parcelize
 data class ImageListItem(
     val id: Int,
     val thumbnailUrl: String,
+    val largeImageURL: String,
     val imageWidth: Int,
     val imageHeight: Int,
     val type: String,

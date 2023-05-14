@@ -1,5 +1,6 @@
 package com.example.databindingsample.common.util
 
+import android.content.res.Resources
 import android.view.View
 import android.widget.ImageView
 import androidx.annotation.StringRes
@@ -57,12 +58,6 @@ fun View.showSnackbar(message: String, onDismissed: () -> Unit = {}) {
     }
 }
 
-
-
-
-
-
-
-
+fun Resources.pxToDp(px: Int): Int = (px / displayMetrics.density).toInt()
 
 
