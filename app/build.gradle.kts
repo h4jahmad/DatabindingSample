@@ -61,7 +61,9 @@ dependencies {
     implementation(libs.google.hilt.android)
     kapt(libs.google.hilt.compiler)
     implementation(libs.squareup.retrofit)
-    implementation(libs.squareup.gson)
+    implementation(libs.squareup.gson.asProvider())
+    implementation(libs.squareup.gson.loggingInterceptor)
+    implementation(libs.coil)
 
     testImplementation(libs.junit)
     testImplementation(libs.google.truth)
