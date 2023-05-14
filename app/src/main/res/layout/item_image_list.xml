@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools">
+
+	<data>
+
+		<variable
+			name="item"
+			type="com.example.databindingsample.home.ui.models.ImageListItem" />
+
+	</data>
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/height_item_image_list"
+		android:background="?attr/selectableItemBackground"
+		android:clickable="true"
+		android:focusable="true">
+
+		<ImageView
+			android:id="@+id/item_image_list_thumbnail"
+			loadUrl="@{item.thumbnailUrl}"
+			android:layout_width="140dp"
+			android:layout_height="0dp"
+			android:contentDescription="@null"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<ImageView
+			android:id="@+id/item_image_list_user_thumbnail"
+			loadUrl="@{item.userImageUrl}"
+			android:layout_width="@dimen/size_user_thumbnail"
+			android:layout_height="@dimen/size_user_thumbnail"
+			android:layout_marginTop="@dimen/space_vertical"
+			android:layout_marginEnd="@dimen/margin_end_item_user_thumbnail"
+			android:contentDescription="@null"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<TextView
+			android:id="@+id/item_image_list_creator_label"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/space_horizontal"
+			android:layout_marginTop="@dimen/dimen_thirty_two"
+			android:layout_marginEnd="@dimen/space_horizontal"
+			android:text="@string/creator_label"
+			android:textColor="@color/colorOutline"
+			android:textSize="@dimen/text_size_list_item_title"
+			app:layout_constraintBaseline_toBaselineOf="@+id/item_image_list_creator_name"
+			app:layout_constraintEnd_toStartOf="@+id/item_image_list_creator_name" />
+
+		<TextView
+			android:id="@+id/item_image_list_creator_name"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="@dimen/space_horizontal"
+			android:layout_marginTop="@dimen/space_vertical"
+			android:text="@{item.userName}"
+			android:textSize="@dimen/text_size_list_item_title"
+			app:layout_constraintEnd_toEndOf="@+id/item_image_list_user_thumbnail"
+			app:layout_constraintTop_toBottomOf="@+id/item_image_list_user_thumbnail"
+			tools:text="Some Name" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

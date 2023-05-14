@@ -21,4 +21,6 @@
 	<string name="invalid_age_error">Sorry. You must be between 18 to 99 :(</string>
 	<string name="user_found_error">Email has been found. If already registered, please login.</string>
 	<string name="register_page_title">Let\'s create a new account!</string>
+	<string name="creator_label">Creator:</string>
+	<string name="network_connection_error">Network connection error. Please check your internet connection.</string>
 </resources>
